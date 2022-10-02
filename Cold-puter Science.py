@@ -1,3 +1,4 @@
+# SOLVED
 
 n = int(input())
 

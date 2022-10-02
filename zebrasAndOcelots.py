@@ -1,18 +1,4 @@
 """
-3
-Z -> Z -> Z
-     Z    Z
-Z    O    Z
-
-        if n == 'O':
-            lowest_ocelot = stack.index(n)
-            stack[lowest_ocelot] = 'Z'
-O Z O
-Z Z O
-O O Z
-Z O Z
-O Z Z
-Z Z Z
 In terms of Y
 Y = 2 * Y(n-1) + 1
 
@@ -32,6 +18,20 @@ X -> Y
 cut off any zs at the top
 
 """
+# List -> Number
+#
+def count_tolls (lst):
+    for char in lst:
+        if char == 'O':
+
+    len(lst)
+
+def uniform_list (lst):
+    if len(lst) == 0:
+        return True
+    else:
+        for b in range(len(lst)):
+            if lst[b] == lst[b - 1]
 
 # defines stackHeight as the first line of input
 stackHeight = int(input())
@@ -50,26 +50,23 @@ for i in range(stackHeight):
 
 
 while zebra_count < len(stack):  # O(N^2^2 + N)
-    print(stack, bellTolls)
 
     zebra_count = 0
 
-    for i in stack:  # O(N)
+    for i in stack:  # O(N)  0-60
         if i == 'Z':
             zebra_count += 1
 
     try:
-        lowest_ocelot = stack.index('O')
-        stack[stack.index('O')] = 'Z'
+        lowest_ocelot = stack.index('O')  # O(N) 0-60
+        stack[stack.index('O')] = 'Z'     # O(N) 0-60
     except ValueError:
         break
 
-    for h in stack[:lowest_ocelot]:  # O(0-60)
-        if h == 'Z':
+    for c in stack[:lowest_ocelot]:  # O(N)  0-60
+        if c == 'Z':
             stack[stack.index(h)] = 'O'
 
     bellTolls += 1
 
-
-# takes too long bruh
-
+print(bellTolls)

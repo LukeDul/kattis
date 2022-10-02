@@ -8,11 +8,13 @@
 # Input: Knuth-Morris-Pratt Output: KMP
 x = input()
 
+firstLetter = True
 printNext = False
 
 for i in x:
-    if x.index(i) == 0:
+    if firstLetter:
         print(i, end="")
+        firstLetter = False
     elif printNext:
         print(i, end="")
         printNext = False

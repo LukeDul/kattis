@@ -15,7 +15,6 @@ while n < numberOfDataSets:
     dataSets.append(int(curI[1]))
     n += 1
 
-print(dataSets)
 
 for i in dataSets:
     print(int(i * ((i + 1) / 2) + i))

@@ -8,13 +8,10 @@ numberOfDataSets = int(input())
 
 dataSets = []
 
-n = 0
-
-while n < numberOfDataSets:
-    curI = input().split(" ")
-    dataSets.append(int(curI[1]))
-    n += 1
-
+for i in range(0, numberOfDataSets):
+    currentInput = input().split(" ")
+    dataSets.append(currentInput)
 
 for i in dataSets:
-    print(int(i * ((i + 1) / 2) + i))
+    print(i[0], end=" ")
+    print(int(int(i[1]) * ((int(i[1]) + 1) / 2) + int(i[1])))

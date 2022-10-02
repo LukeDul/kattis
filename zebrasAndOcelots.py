@@ -1,12 +1,38 @@
 """
 3
 Z -> Z -> Z
-    Z    Z
+     Z    Z
 Z    O    Z
 
+        if n == 'O':
+            lowest_ocelot = stack.index(n)
+            stack[lowest_ocelot] = 'Z'
+O Z O
+Z Z O
+O O Z
+Z O Z
+O Z Z
+Z Z Z
+In terms of Y
+Y = 2 * Y(n-1) + 1
 
+In terms of X
+Y = x
+
+X -> Y
+1 -> 1
+2 -> 3
+3 -> 7
+4 -> 15
+5 -> 31
+6 -> 63
+7 -> 127
+8 -> 255
+
+cut off any zs at the top
 
 """
+
 # defines stackHeight as the first line of input
 stackHeight = int(input())
 
@@ -23,27 +49,27 @@ for i in range(stackHeight):
     stack.insert(0, input())
 
 
-def swap_lowest_ocelot(lst):
-    for n in lst:
-        if n == 'O':
-            lowest_ocelot = lst.index(n)
-            lst[lowest_ocelot] = 'Z'
-            for h in lst[:lowest_ocelot]:  # iterates through animals below the lowest ocelot
-                if h == 'Z':  # checks if the current animal is a zebra
-                    lst[lst.index(h)] = 'O'  # turns zebras into ocelots
-            break
-    return lst
+while zebra_count < len(stack):  # O(N^2^2 + N)
+    print(stack, bellTolls)
 
-
-while zebra_count < len(stack):
     zebra_count = 0
-    for i in stack:
+
+    for i in stack:  # O(N)
         if i == 'Z':
             zebra_count += 1
-    swap_lowest_ocelot(stack)
+
+    try:
+        lowest_ocelot = stack.index('O')
+        stack[stack.index('O')] = 'Z'
+    except ValueError:
+        break
+
+    for h in stack[:lowest_ocelot]:  # O(0-60)
+        if h == 'Z':
+            stack[stack.index(h)] = 'O'
+
     bellTolls += 1
 
-print(bellTolls - 1)
 
 # takes too long bruh
 

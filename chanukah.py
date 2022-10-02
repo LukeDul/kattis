@@ -18,4 +18,4 @@ while n < numberOfDataSets:
 print(dataSets)
 
 for i in dataSets:
-    print(i * ((i + 1) / 2) + i)
+    print(int(i * ((i + 1) / 2) + i))

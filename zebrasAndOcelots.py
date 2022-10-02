@@ -1,8 +1,8 @@
 """
 3
-z -> z -> z
-o    z    z
-z    o    z
+Z -> Z -> Z
+    Z    Z
+Z    O    Z
 
 
 
@@ -25,12 +25,12 @@ for i in range(stackHeight):
 
 def swap_lowest_ocelot(lst):
     for n in lst:
-        if n == 'o':
+        if n == 'O':
             lowest_ocelot = lst.index(n)
-            lst[lowest_ocelot] = 'z'
+            lst[lowest_ocelot] = 'Z'
             for h in lst[:lowest_ocelot]:  # iterates through animals below the lowest ocelot
-                if h == 'z':  # checks if the current animal is a zebra
-                    lst[lst.index(h)] = 'o'  # turns zebras into ocelots
+                if h == 'Z':  # checks if the current animal is a zebra
+                    lst[lst.index(h)] = 'O'  # turns zebras into ocelots
             break
     return lst
 
@@ -38,10 +38,12 @@ def swap_lowest_ocelot(lst):
 while zebra_count < len(stack):
     zebra_count = 0
     for i in stack:
-        if i == 'z':
+        if i == 'Z':
             zebra_count += 1
     swap_lowest_ocelot(stack)
     bellTolls += 1
 
 print(bellTolls - 1)
+
+# takes too long bruh
 

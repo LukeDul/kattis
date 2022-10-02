@@ -40,7 +40,6 @@ while zebra_count < len(stack):
     for i in stack:
         if i == 'z':
             zebra_count += 1
-    print(stack)
     swap_lowest_ocelot(stack)
     bellTolls += 1
 

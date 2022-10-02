@@ -1,3 +1,5 @@
+# COMPLETE
+
 # The first and only line of input will contain at most 100
 # characters, uppercase and lowercase letters of the English alphabet and hyphen (‘-’ ASCII45).
 # The first character will always be an uppercase letter.
@@ -8,19 +10,12 @@
 # Input: Knuth-Morris-Pratt Output: KMP
 x = input()
 
-firstLetter = True
 printNext = False
 
+print(x[0], end="")
 for i in x:
-    if firstLetter:
-        print(i, end="")
-        firstLetter = False
-    elif printNext:
+    if printNext:
         print(i, end="")
         printNext = False
     elif i == "-":
         printNext = True
-
-
-
-

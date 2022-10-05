@@ -22,8 +22,34 @@ Output:
 ***
 **
 
+each num should be max or max - 1
+
+
+
 
 """
 
-teams = int(input())
+
+# Float -> Integer
+# Rounds float to nearest highest integer
+def round_up(num):
+    if round(num) < num:
+        return round(num) + 1
+    else:
+        return round(num)
+
+
 rooms = int(input())
+teams = int(input())
+
+max = teams / rooms
+
+print(max)
+
+
+for i in range(rooms):
+    if teams % rooms == 0:
+        print('*' * int(max))
+    elif:
+        print()
+        break

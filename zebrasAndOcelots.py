@@ -1,4 +1,3 @@
-# COMPLETE
 # defines stackHeight as the first line of input Z Z 0 Z 0
 stackHeight = int(input())
 
@@ -14,5 +13,7 @@ summation = 0
 for i in range(len(stack)):
     if stack[i] == 'O':
         tolls = 2**i
-        summation = tolls + summationg
+        summation = tolls + summation
+
 print(summation)
+

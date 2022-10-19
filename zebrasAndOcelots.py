@@ -17,3 +17,4 @@ for i in range(len(stack)):
 
 print(summation)
 
+#  binary subtraction
